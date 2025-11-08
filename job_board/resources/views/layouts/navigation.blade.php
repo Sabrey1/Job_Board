@@ -1,8 +1,9 @@
-<div class="flex items-center justify-center min-h-screen bg-gray-50">
-    <div class="w-full max-w-7xl sm:px-6 lg:px-8">
-        <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            <div class="p-6 text-gray-900">
-                <nav x-data="{ open: false }" class="bg-white border-b border-gray-100 rounded-lg shadow">
+<div class="hidden sm:flex sm:items-center sm:ms-6 ">
+<div class=" sticky inset-0 shadow-xl" style="max-width: 1300px; width: 100%;  margin: 30px auto 0 auto;">
+    <div  >
+        <div class="overflow-hidden sm:rounded-lg">
+            <div>
+                <nav x-data="{ open: false }" class="bg-white border-b rounded-lg shadow">
                     <!-- Primary Navigation Menu -->
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         <div class="flex justify-between h-16">
@@ -107,4 +108,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>
