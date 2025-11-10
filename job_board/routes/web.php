@@ -10,6 +10,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('Page.Home.HomePage');
 })->middleware(['auth', 'verified'])->name('homepage');
+Route::get('/job', function () {
+    return view('Page.Job.FilterJob');
+})->middleware(['auth', 'verified'])->name('job');
+Route::get('/contact-us', function () {
+    return view('Page.Contact.ContactUs');
+})->middleware(['auth', 'verified'])->name('contactUs');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

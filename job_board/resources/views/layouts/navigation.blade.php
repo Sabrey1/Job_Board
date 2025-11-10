@@ -1,5 +1,5 @@
-<div class="hidden sm:flex sm:items-center sm:ms-6 ">
-<div class=" sticky inset-0 shadow-xl" style="max-width: 1300px; width: 100%;  margin: 30px auto 0 auto;">
+<div class="hidden sm:flex sm:items-center sm:ms-6">
+<div class=" sticky inset-0 shadow-xl" style="max-width: 1200px; width: 100%;  margin: 30px auto 0 auto; height: 100%">
     <div  >
         <div class="overflow-hidden sm:rounded-lg">
             <div>
@@ -21,12 +21,77 @@
                                         {{ __('Home') }}
                                     </x-nav-link>
                                 </div>
+                                <div x-data="{ open: false }" class="relative hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                    <button @click="open = !open" @click.away="open = false"
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Jobs') }}
+                                        <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" x-transition
+                                        class="absolute flex z-50 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                        <div class="py-1">
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('IT Release') }}
+                                            </x-nav-link>
+
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('Other') }}
+                                            </x-nav-link>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div x-data="{ open: false }" class="relative hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                    <button @click="open = !open" @click.away="open = false"
+                                        class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition">
+                                        {{ __('Media') }}
+                                        <svg class="ms-2 w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="2" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    <div x-show="open" x-transition
+                                        class="absolute flex z-50 mt-2 w-40 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                                        <div class="py-1">
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('All') }}
+                                            </x-nav-link>
+
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('General Knowledge') }}
+                                            </x-nav-link>
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('IT Knowledge') }}
+                                            </x-nav-link>
+                                            <x-nav-link :href="route('job')" :active="request()->routeIs('job')">
+                                                {{ __('Seeker Revieww') }}
+                                            </x-nav-link>
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                    <x-nav-link :href="route('homepage')" :active="request()->routeIs('homepage')">
+                                        {{ __('About Us') }}
+                                    </x-nav-link>
+                                </div>
+                                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                                    <x-nav-link :href="route('contactUs')" :active="request()->routeIs('contactUs')">
+                                        {{ __('Contact Us') }}
+                                    </x-nav-link>
+                                </div>
+
+
+                                {{-- <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                                         {{ __('Dashboard') }}
                                     </x-nav-link>
-                                </div>
+                                </div> --}}
                             </div>
 
                             <!-- Settings Dropdown -->
